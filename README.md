@@ -1,4 +1,6 @@
-ONLINE JOB PORTAL USING REACT AND SANITY
+GUVI HCL PROJECT 2 BY REETIRAJ GAUTAM
+
+ONLINE JOB PORTAL USING JS CSS HTML MySQL
 
 
 This website is all about searching the top jobs from top-reputed companies all over the world.
