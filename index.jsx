@@ -1,103 +1,35 @@
-import { useState } from "react";
+import React from "react";
+import Navbar from "../Navbar";
+import { Link } from "react-router-dom";
 import "./index.css";
-const experience = [
-  { min: 0, max: 1 },
-  { min: 2, max: 3 },
-  { min: 4, max: 5 },
-  { min: 5, max: 10 },
-];
 
-const Filter = ({
-  setFilteredJobs,
-  handleJobFilter,
-  handleExperienceFilter,
-  searchEvent,
-}) => {
-  const [checkedState, setCheckedState] = useState(
-    new Array(experience.length).fill(false)
-  );
-
-  const handleOnChange = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-
-    setCheckedState(updatedCheckedState);
-    handleExperienceFilter(updatedCheckedState);
-  };
+const Home = () => {
   return (
     <>
-      <div className="filter-page">
-        <div className="search-box">
-          <div className="search">
-            <h3>Search Jobs</h3>
-            <div className="job-search">
-              <input
-                type="text"
-                className="search-term"
-                placeholder="Search Here"
-                onChange={searchEvent}
-              />
-            </div>
-          </div>
-          <div className="filter">
-            <div className="job-category">
-              <h4>Categories</h4>
-              <ul>
-                <li onClick={handleJobFilter}>Frontend</li>
-                <li onClick={handleJobFilter}>Backend</li>
-                <li onClick={handleJobFilter}>Devops</li>
-                <li onClick={handleJobFilter}>Full Stack</li>
-                <li onClick={handleJobFilter}>Digital Marketing</li>
-              </ul>
-            </div>
-
-            <div className="job-category">
-              <h4>Experience</h4>
-              <ul className="checkbox">
-                <li>
-                  <input
-                    name="0-1"
-                    type="checkbox"
-                    checked={checkedState[0]}
-                    onChange={() => handleOnChange(0)}
-                  />
-                  0-1 year
-                </li>
-                <li>
-                  <input
-                    name="2-3"
-                    type="checkbox"
-                    checked={checkedState[1]}
-                    onChange={() => handleOnChange(1)}
-                  />
-                  2-3 year
-                </li>
-                <li>
-                  <input
-                    name="4-5"
-                    type="checkbox"
-                    checked={checkedState[2]}
-                    onChange={() => handleOnChange(2)}
-                  />
-                  4-5 year
-                </li>
-                <li>
-                  <input
-                    name="4-5"
-                    type="checkbox"
-                    checked={checkedState[3]}
-                    onChange={() => handleOnChange(3)}
-                  />
-                  5+ year
-                </li>
-              </ul>
-            </div>
+      <Navbar />
+      <div className="banner-img">
+        <div className="title">
+          <h3>
+            Find the <span>Right Job</span> In the
+            <br />
+            <span> Right Companies</span>
+          </h3>
+          <div className="small-tagline">
+            <p>Got fired..!! Get Ready to be hired</p>
           </div>
         </div>
+        <div className="button" data-testid="btn">
+          <Link to="/Jobs">Browse Jobs</Link>
+        </div>
+      </div>
+      <div className="social-media" data-testid="images">
+        <img src="https://assets.website-files.com/5ec5d86528da2f24250d634c/5ec7175d7e0c401a3e668a1d_facebook-logo.svg" alt="fb" />
+        <img src="https://assets.website-files.com/5ec5d86528da2f24250d634c/5ec7175d68c9b0a57ed94925_google-logo.svg" alt="google" />
+        <img src="https://assets.website-files.com/5ec5d86528da2f24250d634c/601e13bc333df3521cce5b6a_youtube-logo-jobs-webflow-template.svg" alt="youtube" />
+        <img src="https://assets.website-files.com/5ec5d86528da2f24250d634c/601e13bc774d5a00bcbb0baf_linkedin-logo-jobs-webflow-template.svg" alt="linkedin" />
       </div>
     </>
   );
 };
 
-export default Filter;
+export default Home;
