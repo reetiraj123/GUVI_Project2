@@ -2,7 +2,11 @@ GUVI HCL PROJECT 2 BY REETIRAJ GAUTAM
 
 ONLINE JOB PORTAL USING JS CSS HTML MySQL
 CLICK HERE http://djp.manjurulhoque.com/en/
+Open in browser
 
+Main site → http://127.0.0.1:8000/
+
+Admin panel → http://127.0.0.1:8000/admin/
 
 
 This website is all about searching the top jobs from top reputed companies all over the world.
